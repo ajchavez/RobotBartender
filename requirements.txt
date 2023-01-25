@@ -1,0 +1,5 @@
+bitstring==4.0.1
+colorzero==2.0
+gpiozero==1.6.2
+pyserial==3.5
+RPi.GPIO==0.7.1
