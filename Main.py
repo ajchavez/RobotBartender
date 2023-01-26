@@ -7,6 +7,7 @@ class kathy:
     def __init__(self):
         self.LiquorSupply = json.load(open("LiquorSupply.json"))
         self.currentStepPosition = 0
+        self.moveStepper(5000)
         self.currentSlot = 0
         self.servoKit = ServoKit(channels=16)
 
@@ -55,6 +56,7 @@ class kathy:
         servoAnglePoor, servoAngleStandby = self.LiquorSupply["Servo Angles"]["poor"],self.LiquorSupply["Servo Angles"]["standby"]
         self.servoKit.servo[servoID].angle = servoAnglePoor
         time.sleep(1)
+        print(servoAngleStandby)
         self.servoKit.servo[servoID].angle = servoAngleStandby
 
     def triggerMixer(self, slot):
@@ -70,6 +72,7 @@ class kathy:
     def Full_Test(self):
         for key in self.LiquorSupply["Liquor Slots"].keys():
             self.moveToLiquorSlot(key)
+            print(key)
             self.triggerServo(key)
 
 if __name__ == "__main__":

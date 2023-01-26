@@ -2,7 +2,7 @@
   "Liquor Types": ["Vodka", "Tequila", "Rum", "Gin", "Whiskey"],
   "Servo Angles": {
     "remove": 0,
-    "standby": 10,
+    "standby": 30,
     "poor": 90
   },
   "Liquor Slots": {
