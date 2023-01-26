@@ -1,0 +1,15 @@
+{
+  "Liquor Types": ["Vodka", "Tequila", "Rum", "Gin", "Whiskey"],
+  "Servo Angles": {
+    "remove": 0,
+    "standby": 10,
+    "poor": 90
+  },
+  "Liquor Slots": {
+    "0": {"type": "Vodka", "mL": 750, "steps": 0, "servo": 0},
+    "1": {"Type": "", "mL": 0, "steps": -1050, "servo": 1},
+    "2": {"type": "", "mL": 0, "steps": -2100, "servo": 2},
+    "3": {"Type": "", "mL": 0, "steps": -3150, "servo": 3},
+    "4": {"type": "", "mL": 0, "steps": -4050, "servo": 4}
+  }
+}
