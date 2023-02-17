@@ -5,11 +5,21 @@
     "standby": 30,
     "poor": 90
   },
+  "Mixer Slots": {
+      "0":{"type":"", "mL": 0, "steps": 0, "gpio": 17},
+      "1":{"type":"", "mL": 0, "steps": 0, "gpio": 27},
+      "2":{"type":"", "mL": 0, "steps": 0, "gpio": 22},
+      "3":{"type":"", "mL": 0, "steps": 0, "gpio": 10},
+      "4":{"type":"", "mL": 0, "steps": 0, "gpio": 9},
+      "5":{"type":"", "mL": 0, "steps": 0, "gpio": 11},
+      "6":{"type":"", "mL": 0, "steps": 0, "gpio": 13},
+      "7":{"type":"", "mL": 0, "steps": 0, "gpio": 19}
+  },
   "Liquor Slots": {
     "0": {"type": "Vodka", "mL": 750, "steps": 0, "servo": 0},
-    "1": {"Type": "", "mL": 0, "steps": -1050, "servo": 1},
-    "2": {"type": "", "mL": 0, "steps": -2100, "servo": 2},
-    "3": {"Type": "", "mL": 0, "steps": -3150, "servo": 3},
-    "4": {"type": "", "mL": 0, "steps": -4050, "servo": 4}
+    "1": {"Type": "", "mL": 0, "steps": -1050, "servo": 2},
+    "2": {"type": "", "mL": 0, "steps": -2100, "servo": 4},
+    "3": {"Type": "", "mL": 0, "steps": -3150, "servo": 6},
+    "4": {"type": "", "mL": 0, "steps": -4050, "servo": 7}
   }
 }

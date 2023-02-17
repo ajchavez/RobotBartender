@@ -2,6 +2,9 @@ import json
 from TMC2209_Raspberry_Pi.src.TMC_2209.TMC_2209_StepperDriver import *
 from adafruit_servokit import ServoKit
 import time
+import sys
+import RPi.GPIO as GPIO
+
 
 class kathy:
     def __init__(self):
@@ -41,7 +44,7 @@ class kathy:
         tmc.readDRVSTATUS()
         tmc.readGCONF()
         tmc.set_acceleration(2000)
-        tmc.set_max_speed(500)
+        tmc.set_max_speed(700)#500
         def my_callback(channel):
             pass
         tmc.set_stallguard_callback(26, 80, my_callback)
@@ -75,7 +78,27 @@ class kathy:
             print(key)
             self.triggerServo(key)
 
+def relay_test():
+    LiquorSupply = json.load(open("LiquorSupply.json"))
+    for mixer in LiquorSupply["Mixer Slots"].keys():
+        print(f"GPIO Relay: {LiquorSupply['Mixer Slots'][mixer]['gpio']}")
+        pin = LiquorSupply["Mixer Slots"][mixer]["gpio"]
+        GPIO.setup(pin, GPIO.OUT)
+        GPIO.output(pin, False)
+        import time
+        time.sleep(1)
+        GPIO.output(pin,True)
+    print("test relay")
+    
 if __name__ == "__main__":
-    kathy = kathy()
-    kathy.Full_Test()
+    args = sys.argv[0:]
+    if "-full" in args:
+        kathy = kathy()
+        kathy.Full_Test()
+    if "-serv" in args:
+        pass
+    if "-step" in args:
+        pass
+    if "-relay" in args:
+        relay_test()
     #kathy.changeLiquor(0, type = "Vodka", mL = 750)

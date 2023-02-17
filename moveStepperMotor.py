@@ -28,7 +28,7 @@ def moveStepper(steps):
 def triggerServo():
     from adafruit_servokit import ServoKit
     kit = ServoKit(channels=16)
-    kit.servo[7].angle = 180
+    kit.servo[7].angle = 30
         
 if __name__ == "__main__":
     #import sys
