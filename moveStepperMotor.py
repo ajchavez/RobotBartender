@@ -1,5 +1,5 @@
 from TMC2209_Raspberry_Pi.src.TMC_2209.TMC_2209_StepperDriver import *
-
+import time
 def my_callback(channel):
     pass
 
@@ -29,7 +29,8 @@ def triggerServo():
     from adafruit_servokit import ServoKit
     kit = ServoKit(channels=16)
     kit.servo[7].angle = 30
-        
+    time.sleep(2)
+    kit.servo[7].angle = 90    
 if __name__ == "__main__":
     #import sys
     #print(sys.argv[1])

@@ -3,9 +3,8 @@ from TMC2209_Raspberry_Pi.src.TMC_2209.TMC_2209_StepperDriver import *
 from adafruit_servokit import ServoKit
 import time
 import sys
-import RPi.GPIO as GPIO
-import faulthandler
-faulthandler.enable()
+import RPi.GPom signal import signal, SIGSEGV
+
 class kathy:
     def __init__(self):
         self.LiquorSupply = json.load(open("LiquorSupply.json"))
@@ -25,9 +24,12 @@ class kathy:
         self.LiquorSupply["Liquor Slots"][str(slot)]["mL"] = mL
         self.saveLiquorSupply()
 
+    def handler(sigNum, frame):
+        print(f"handle signal {sigNum}")
+        
     def moveToLiquorSlot(self, slot):
         location = self.LiquorSupply["Liquor Slots"][str(slot)]["steps"]
-        self.moveStepper(location - self.currentStepPosition)
+        signal(self.moveStepper(location - self.currentStepPosition), handler)
         print("movin")
         self.currentSlot = int(slot)
         print("moving")

@@ -1,0 +1,32 @@
+def vc():
+    from Main import kathy
+    kathy = kathy()
+    kathy.vodkaCran()
+    print("vc")
+
+def vc2():
+    from Main import kathy
+    kathy = kathy()
+    kathy.vodkaCran()
+    print("vc")
+
+def button():
+    import tkinter as tk
+    root = tk.Tk()
+    frame = tk.Frame(root)
+    frame.pack()
+
+
+    slogan = tk.Button(frame,
+                       text="Rum Coke",
+                       command=vc, height= 400, width = 20)
+    slogan.pack(side=tk.LEFT)
+
+    slogan = tk.Button(frame,
+                       text="Rum Pepsi",
+                       command=vc2, height= 400, width = 20)
+    slogan.pack(side=tk.RIGHT)
+
+    root.mainloop()
+
+button()
